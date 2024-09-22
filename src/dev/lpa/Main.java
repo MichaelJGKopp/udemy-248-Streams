@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -88,6 +89,9 @@ public class Main {
       .limit(10)
       .forEach(s -> System.out.print(s + " "));
 
-
+    System.out.println();
+    IntStream.iterate(1, n -> n + 1)
+      .limit(20)
+      .forEach( s -> System.out.print(s + " "));
   }
 }
