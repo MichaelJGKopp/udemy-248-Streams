@@ -110,6 +110,11 @@ public class Main {
     IntStream.range(1, 101)    // prime numbers <= 100
       .filter(Main::isPrime)
       .forEach( s -> System.out.print(s + " "));
+
+    System.out.println();
+    IntStream.rangeClosed(1, 100)    // prime numbers <= 100
+      .filter(Main::isPrime)
+      .forEach( s -> System.out.print(s + " "));
   }
 
   public static boolean isPrime(int wholeNumber) {
