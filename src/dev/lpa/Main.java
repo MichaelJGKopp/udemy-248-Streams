@@ -44,17 +44,16 @@ public class Main {
     }
     System.out.println("----------------------------------------------------");
 
-    bingoPool.stream()
+    var tempStream = bingoPool.stream() // won't be executed until terminal operation
       .limit(15)
       .filter(s -> s.indexOf('G') == 0 || s.indexOf('O') == 0)
       .map(s -> s.charAt(0) + "-" + s.substring(1))
-      .sorted()
-      .forEach(s -> System.out.print(s + " "));
+      .sorted();
+//      .forEach(s -> System.out.print(s + " "));
 
+    tempStream.forEach(s -> System.out.print(s + " ")); // terminal operation
     System.out.println("\n--------------------------------------------------");
 
-    for (int i = 0; i < 15; i++) {
-      System.out.println(bingoPool.get(i));
-    }
+//    tempStream.forEach(s -> System.out.print(s.toLowerCase() + " ")); // stream already already consumed
   }
 }
