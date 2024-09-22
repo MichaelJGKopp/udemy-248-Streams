@@ -90,9 +90,15 @@ public class Main {
       .forEach(s -> System.out.print(s + " "));
 
     System.out.println();
-    IntStream.iterate(1, n -> n + 1)
+    IntStream.iterate(1, n -> n + 1)    // first 20 prime numbers
       .filter(Main::isPrime)
       .limit(20)
+      .forEach( s -> System.out.print(s + " "));
+
+    System.out.println();
+    IntStream.iterate(1, n -> n + 1)    // prime numbers <= 100
+      .limit(100)
+      .filter(Main::isPrime)
       .forEach( s -> System.out.print(s + " "));
   }
 
