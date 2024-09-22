@@ -91,6 +91,7 @@ public class Main {
 
     System.out.println();
     IntStream.iterate(1, n -> n + 1)
+      .filter(Main::isPrime)
       .limit(20)
       .forEach( s -> System.out.print(s + " "));
   }
