@@ -1,9 +1,7 @@
 package dev.lpa;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -55,5 +53,14 @@ public class Main {
     System.out.println("\n--------------------------------------------------");
 
 //    tempStream.forEach(s -> System.out.print(s.toLowerCase() + " ")); // stream already already consumed
+
+    String[] strings = {"One", "Two", "Three"};
+    Arrays.stream(strings)
+      .sorted(Comparator.reverseOrder())
+      .forEach(System.out::println);
+
+    Stream.of("Six", "Five", "Four")
+      .map(String::toUpperCase)
+      .forEach(System.out::println);
   }
 }
